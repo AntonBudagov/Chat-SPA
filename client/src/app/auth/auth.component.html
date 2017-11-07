@@ -1,0 +1,21 @@
+<mat-card color="warn" >
+  <form [formGroup]="loginForm" (submit)="login()">
+    <mat-form-field class="example-full-width">
+      <input type="text" matInput placeholder="username" formControlName="username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="password" formControlPassword="password">
+    </mat-form-field>
+    <button type="submit" mat-raised-button mat-button color="warn" [disabled]="loginForm.invalid">
+      Login
+    </button>
+  </form>
+</mat-card>
+
+
+<!--<form class="example-form">-->
+  <!--<md-form-field class="example-full-width">-->
+    <!--<input mdInput placeholder="Favorite food" value="Sushi">-->
+  <!--</md-form-field>-->
+  <!--<button mat-button color="warn">Click me!</button>-->
+<!--</form>-->

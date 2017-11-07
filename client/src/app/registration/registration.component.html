@@ -1,0 +1,16 @@
+<div class="g-row registration">
+  <form [formGroup]="regForm" novalidate class="example-form" (ngSubmit)="reg(regForm)">
+    <mat-card>
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput placeholder="Name" formControlName="username"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput placeholder="NickName" formControlName="nickname"/>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="password" matInput placeholder="Password" formControlName="password"/>
+      </mat-form-field>
+      <button mat-button>sumbit</button>
+    </mat-card>
+  </form>
+</div>

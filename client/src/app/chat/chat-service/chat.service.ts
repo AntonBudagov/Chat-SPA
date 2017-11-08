@@ -13,12 +13,11 @@ export class ChatService {
   constructor(private http: HttpClient) { }
 
   public getMessages(): Observable<ChatMessage[]> {
-    // header('resp.setHeader('Access-Control-Allow-Origin','*') ')
     return this.http.get(this.chatUrl)
 			.map(res => res as ChatMessage[] || []);
   }
   public sendMessage(message: any) {
 
-    return this.http.post(this.chatUrl, message, {headers: this.headers});
+    return this.http.post<ChatMessage>(this.chatUrl, message, {headers: this.headers});
   }
 }

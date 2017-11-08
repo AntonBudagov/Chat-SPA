@@ -22,7 +22,7 @@
 <form [formGroup]="messageForm" class="example-form" class="chat-input" (submit)="send()">
   <mat-card>
     <mat-form-field class="example-full-width">
-      <input matInput formControlName="messageControl">
+      <input required matInput formControlName="messageControl">
     </mat-form-field>
     <button mat-mini-fab [disabled]="messageForm.invalid">
       <mat-icon>send</mat-icon>

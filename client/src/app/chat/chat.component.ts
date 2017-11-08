@@ -35,9 +35,10 @@ export class ChatComponent implements OnInit, OnDestroy {
         console.error('Server not allowed');
       });
   }
-  public send() {
+  public send(form) {
     const message = new ChatMessage();
-    message.nickName = localStorage.getItem('nickname');
+    const user = JSON.parse(localStorage.getItem('user'));
+    message.userId = user._id;
     message.message = this.messageForm.controls.messageControl.value;
     // message.message = this.messageControl.value;
     this.chatService.sendMessage(message).subscribe(

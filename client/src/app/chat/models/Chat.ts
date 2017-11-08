@@ -1,5 +1,5 @@
 export class ChatMessage {
-    nickName: string;
+    userId: string;
     message: string;
     created?: string;
 }

@@ -10,6 +10,7 @@ var http = require('http');
 var authorize = require('./routes/authorize');
 var users = require('./routes/user');
 var messages = require('./routes/messages');
+
 var app = express();
 
 
@@ -63,7 +64,6 @@ app.use(function(req, res, next) {
 });
 
 
-
 var port = process.env.PORT || '3000';
 app.set('port', port);
 
@@ -76,9 +76,41 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+const io = require('socket.io')(server);
 
 server.listen(port);
 // server.on('error', onError);
 // server.on('listening', onListening);
+
+
+io.on('connection', function (socket) {
+    console.log('connection socket');
+
+    socket.on('newMessage', () => {
+        console.log('new message');
+        io.emit('updateMessages', true)
+
+    });
+
+});
+
+
+// io.on('connection', (socket) => {
+//
+//     console.log('user connected');
+//
+//     socket.on('disconnect', function() {
+//         console.log('user disconnected');
+//     });
+//
+//     socket.on('add-message', (message) => {
+//         // io.emit('message', { type: 'new-message', text: message });
+//         socket.emit('hello', {hello: 'world'});
+//         io.emit('updateMessages', true);
+//         // Function above that stores the message in the database
+//         // databaseStore(message)
+//     });
+//
+// });
 
 module.exports = app;

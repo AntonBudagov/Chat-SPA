@@ -1,16 +1,16 @@
 <div class="g-row">
   <mat-card class="example-form" *ngIf="chatMessages.length > 0;" color="primary">
     <mat-card *ngFor="let message of chatMessages">
-      <md-card-header class="g-row__header">
+      <mat-card-header class="g-row__header">
         <!--<div md-card-avatar class="example-header-image"></div>-->
-          <md-card-title>
+          <mat-card-title>
             <div class="g-row__head">
-              <mat-icon color="primary">person outlet</mat-icon><b class="g-row__name">{{message.nickName}}</b>
+              <mat-icon color="primary">person outlet</mat-icon><b class="g-row__name">{{user.nickname}}</b>
               <mat-icon>update</mat-icon><b class="g-row__name"> {{message.created |  date }}</b>
             </div>
-          </md-card-title>
+          </mat-card-title>
         <hr>
-      </md-card-header>
+      </mat-card-header>
 
 
       <mat-card-content>
@@ -19,7 +19,7 @@
     </mat-card>
   </mat-card>
 </div>
-<form [formGroup]="messageForm" class="example-form" class="chat-input" (submit)="send()">
+<form [formGroup]="messageForm" class="example-form" class="chat-input" (submit)="send(messageForm)">
   <mat-card>
     <mat-form-field class="example-full-width">
       <input required matInput formControlName="messageControl">

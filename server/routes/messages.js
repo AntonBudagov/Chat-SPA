@@ -35,7 +35,7 @@ router.post('/', function(req, res, next) {
     //     .set('Content-Type', 'application/json')
     //     .status(200).send('end');
     Message.create(req.body, function (err, messages) {
-        res.status(200).set('Content-Type', 'application/json').status(200).send('ok');
+        res.status(200).json({"response": "ok"});
     })
 
 });

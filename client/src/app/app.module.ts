@@ -14,38 +14,31 @@ import {AppRoutingModule} from './app.routing.module';
 // import {ChatModule} from './chat/chat.module';
 
 import 'hammerjs';
-import {RegistrationModule} from "./registration/registration.module";
+import {RegistrationModule} from './registration/registration.module';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {SharedModule} from "./shared/shared.module";
-import {AuthModule} from "./auth/auth.module";
-import {AuthGuard} from "./auth/guard/auth.guard";
+import {SharedModule} from './shared/shared.module';
+import {AuthModule} from './auth/auth.module';
+import {AuthGuard} from './auth/guard/auth.guard';
 
+import { SocketIoConfig, SocketIoModule } from 'ng-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
     GiphyComponent,
-    // AuthComponent,
     NotFoundComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    // HttpModule,
-    // ReactiveFormsModule,
-    // FormsModule,
     SharedModule,
     RegistrationModule,
+    SocketIoModule.forRoot(config),
     AuthModule,
     AppRoutingModule,
 
   ],
-  // exports: [
-  //   MatToolbarModule,
-  //   MatCardModule,
-  //   MatInputModule,
-  //   MatButtonModule
-  // ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })

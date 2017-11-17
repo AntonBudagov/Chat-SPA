@@ -8,15 +8,14 @@ import { MatToolbarModule, MatCardModule, MatInputModule, MatButtonModule, MatIc
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-		MatIconModule
-  ],
-	exports: [
-		MatToolbarModule,
-		MatCardModule,
-		MatInputModule,
-		MatButtonModule,
-		MatIconModule
-	],
+    MatIconModule
+  ], exports: [
+    MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule
+    ],
 
   declarations: []
 })

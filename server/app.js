@@ -4,7 +4,6 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let http = require('http');
-// var index = require('./routes/index');
 let authorize = require('./routes/authorize');
 let users = require('./routes/user');
 let messages = require('./routes/messages');

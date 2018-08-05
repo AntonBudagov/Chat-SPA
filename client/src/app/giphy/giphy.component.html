@@ -1,7 +1,0 @@
-<input type="text" #searchGif>
-<button (click)="search(searchGif)">search</button>
-<div class="result">
-  <div *ngFor="let item of gifs">
-    <img src="{{item.images.original.url}}" alt="">
-  </div>
-</div>

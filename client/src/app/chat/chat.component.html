@@ -19,12 +19,12 @@
     </mat-card>
   </mat-card>
 </div>
-<form [formGroup]="messageForm" class="example-form" class="chat-input" (submit)="send(messageForm)">
+<form [formGroup]="messageForm" class="example-form chat-input">
   <mat-card>
     <mat-form-field class="example-full-width">
       <input required matInput formControlName="messageControl">
     </mat-form-field>
-    <button mat-mini-fab [disabled]="messageForm.invalid">
+    <button mat-mini-fab [disabled]="messageForm.invalid" (click)="send(messageForm)">
       <mat-icon>send</mat-icon>
     </button>
   </mat-card>

@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
       .subscribe((user: User) => {
         this.user = user;
         localStorage.setItem('user', JSON.stringify(this.user));
-        // this.router.navigate(['/chat'])
+        this.router.navigate(['/chat'])
     });
   }
 

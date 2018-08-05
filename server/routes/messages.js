@@ -1,20 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var Message = require('../models/Message.js');
-// const messages = [
-//     {
-//         nickName: 'Ivan',
-//         message: 'Message from Ivan',
-//         created: Date.now()
-//     },
-//     {
-//         nickName: 'Ivan2',
-//         message: 'Message from Ivan',
-//         created: Date.now()
-//
-//     }
-// ];
+let express = require('express');
+let router = express.Router();
+let mongoose = require('mongoose');
+let Message = require('../models/Message.js');
+
 
 /* GET message listing. */
 router.get('/', function(req, res, next) {

@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var mongoose = require('mongoose');
-var User = require('../models/User.js');
+let express = require('express');
+let router = express.Router();
+let mongoose = require('mongoose');
+let User = require('../models/User.js');
 
 //TODO jwt
 

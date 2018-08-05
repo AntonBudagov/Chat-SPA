@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 
 const MessageSchema = new mongoose.Schema({
     userId: mongoose.Schema.Types.ObjectId,

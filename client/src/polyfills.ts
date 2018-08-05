@@ -70,3 +70,5 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * Need to import at least one locale-data with intl.
  */
 // import 'intl/locale-data/jsonp/en';
+// for https://github.com/rodgc/ngx-socket-io
+(window as any).global = window;

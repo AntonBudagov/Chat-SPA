@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Socket } from 'ng-socket-io';
-// import * as io from 'socket.io-client';
+import { Socket } from 'ngx-socket-io';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { ChatMessage } from '../models/Chat';
@@ -21,7 +20,6 @@ export class ChatService {
       this.messageSubject.next(true);
     });
 
-    // this.socket.emit('hello');
   }
 
   public getMessages(): Observable<ChatMessage[]> {
@@ -46,20 +44,4 @@ export class ChatService {
         });
   }
 
-  // public getMessages() {
-  //   const observable = new Observable(observer => {
-  //     this.socket = io(this.chatUrl);
-  //     this.socket.on((data) => {
-  //       observer.next(data);
-  //     });
-  //     return () => {
-  //       this.socket.disconnect();
-  //     };
-  //   })
-  //   console.log(observable);
-  //   return observable;
-  // }
-  // public sendMessage(message) {
-  //   this.socket.emit('add-message', message);
-  // }
 }

@@ -6,13 +6,11 @@
           <mat-card-title>
             <div class="g-row__head">
               <mat-icon color="primary">person outlet</mat-icon><b class="g-row__name">{{user.nickname}}</b>
-              <mat-icon>update</mat-icon><b class="g-row__name"> {{message.created |  date }}</b>
+              <mat-icon>update</mat-icon><b class="g-row__name"> {{message.created | date :  "MMM d, y HH:mm:ss" }}</b>
             </div>
           </mat-card-title>
         <hr>
       </mat-card-header>
-
-
       <mat-card-content>
         {{message.message}}
       </mat-card-content>

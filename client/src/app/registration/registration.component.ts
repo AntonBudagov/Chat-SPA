@@ -19,10 +19,10 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
   }
 
-  public reg() {
+  public submit() {
     this.registrationService.registration(this.regForm.value)
       .subscribe((response) => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/auth']);
       })
 
   }
